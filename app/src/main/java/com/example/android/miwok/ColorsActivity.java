@@ -17,6 +17,10 @@ package com.example.android.miwok;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ColorsActivity extends AppCompatActivity {
 
@@ -24,5 +28,24 @@ public class ColorsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.word_list);
+
+        List<Word> words = new ArrayList<>();
+
+        words.add(new Word("Where are you going?", "minto wuksus"));
+        words.add(new Word("Where are you going?", "minto wuksus"));
+        words.add(new Word("Where are you going?", "minto wuksus"));
+        words.add(new Word("Where are you going?", "minto wuksus"));
+        words.add(new Word("Where are you going?", "minto wuksus"));
+        words.add(new Word("Where are you going?", "minto wuksus"));
+        words.add(new Word("Where are you going?", "minto wuksus"));
+        words.add(new Word("Where are you going?", "minto wuksus"));
+        words.add(new Word("Where are you going?", "minto wuksus"));
+        words.add(new Word("Where are you going?", "minto wuksus"));
+
+        WordAdapter adapter = new WordAdapter(this, words);
+
+        ListView listView = (ListView) findViewById(R.id.list);
+
+        listView.setAdapter(adapter);
     }
 }
