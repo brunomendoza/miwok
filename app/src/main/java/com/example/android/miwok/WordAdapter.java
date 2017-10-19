@@ -37,7 +37,6 @@ public class WordAdapter extends ArrayAdapter<Word> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         View listItemView = convertView;
 
-
         // Check if the existing view is being reused, otherwise inflate the view
         if (listItemView == null) {
             listItemView = LayoutInflater.from(getContext()).inflate(
@@ -61,18 +60,6 @@ public class WordAdapter extends ArrayAdapter<Word> {
 
         TextView miwokTranslationTextView = (TextView) listItemView.findViewById(R.id.miwok_text_view);
         miwokTranslationTextView.setText(currentWord.getMiwokTranslation());
-
-        if (currentWord.hasAudio()) {
-
-            listItemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    MediaPlayer mediaPlayer = MediaPlayer.create(getContext(), currentWord.getAudioResourceId());
-                    mediaPlayer.start();
-                }
-            });
-
-        }
 
         View tranlationWrapper = listItemView.findViewById(R.id.translation_wrapper);
         int color = ContextCompat.getColor(getContext(), mColorResourceId);
