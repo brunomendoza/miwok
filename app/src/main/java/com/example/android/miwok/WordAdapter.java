@@ -64,7 +64,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
 
         if (currentWord.hasAudio()) {
 
-            miwokTranslationTextView.setOnClickListener(new View.OnClickListener() {
+            listItemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     MediaPlayer mediaPlayer = MediaPlayer.create(getContext(), currentWord.getAudioResourceId());
