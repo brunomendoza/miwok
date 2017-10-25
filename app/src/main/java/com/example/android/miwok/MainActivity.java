@@ -15,14 +15,10 @@
  */
 package com.example.android.miwok;
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.ViewParent;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,9 +31,11 @@ public class MainActivity extends AppCompatActivity {
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.view_pager);
 
-        SimpleFragmentPageAdapter simpleFragmentPageAdapter = new SimpleFragmentPageAdapter(getSupportFragmentManager());
+        CategoryAdapter categoryAdapter = new CategoryAdapter(this, getSupportFragmentManager());
 
-        viewPager.setAdapter(simpleFragmentPageAdapter);
+        viewPager.setAdapter(categoryAdapter);
 
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
+        tabLayout.setupWithViewPager(viewPager);
     }
 }
