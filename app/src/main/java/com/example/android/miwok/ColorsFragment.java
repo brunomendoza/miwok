@@ -26,7 +26,6 @@ public class ColorsFragment extends Fragment {
     private AudioManager mAudioManager;
     private AudioManager.OnAudioFocusChangeListener mAudioFocusChangeListener;
 
-
     public ColorsFragment() {
         // Required empty public constructor
     }
